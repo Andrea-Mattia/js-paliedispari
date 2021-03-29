@@ -10,8 +10,37 @@
 </head>
 <body>
 
-    <button id="palindrome">Palindrome</button>
-    <button id="even-odd">Even or Odd</button>
+    <div class="app">
+        <nav class="navbar">
+            <ul class="df-center">
+                <li>
+                    <a href="#palindrome-app">Palindrome</a>
+                </li>
+                <li>
+                    <a href="#even-odd-app">Even Odd</a>
+                </li>
+            </ul>
+        </nav>
+        <section class="main-content">
+            <div id="palindrome-app" class="df-center fd-col h-100-vh">
+                <h2>Palindrome</h2>
+                <div>Inserisci una parola, controllerò se è palindroma!</div>
+                <div>La parola inserita è: <span id="user-word"></span></div>
+                <div id="pal">Attendo l'input, premi il pulsante!</div>
+                <button id="palindrome">Check</button>
+            </div>
+            <div id="even-odd-app" class="df-center fd-col h-100-vh">
+                <h2>Even or Odd</h2>
+                <div>Scegli tra pari e dispari, inserisci un numero e scopri se hai vinto!</div>
+                <div>Hai scelto: <span id="choice"></span></div>
+                <div>Il tuo numero è: <span id="us-num"></span></div>
+                <div>Il numero del PC è: <span id="pc-num"></span></div>
+                <div>La somma tra i due numeri è: <span id="sum"></span></div>
+                <div id="result">Attendo l'input, premi il pulsante!</div>
+                <button id="even-odd">Check</button>
+            </div>
+        </section>
+    </div>
     
 
     <!-- JS -->

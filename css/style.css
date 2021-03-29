@@ -5,6 +5,79 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: sans-serif;
+}
+
+/* UTILITIES */
+.df-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.h-100-vh {
+    height: 100vh;
+}
+
+.fd-col {
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+a {
+    text-decoration: none;
+    color: #222;
+    padding: 0.5rem;
+    background: #fff;
+    border: 1px solid transparent;
+    border-radius: 10px;   
+}
+
+button {
+    font-size: 30px;
+    padding: 0.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .3s;;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 3%;
+    left: 50%;
+    transform: translate(-50%, -3%);
+    height: 100px;
+}
+
+.navbar ul li {
+    list-style: none;
+    margin: 0 1rem;
+    transition: all .3s;
+}
+
+button:hover,
+.navbar ul li:hover {
+    transform: scale(1.15);
+    filter: drop-shadow(4px 4px rgba(0,0,0, .25));
+}
+
+/* MAIN CONTENT */
+.main-content {
+    width: 100vw;
+}
+
+/* PALINDROME */
+#palindrome-app {
+    background: lightskyblue;
+}
+
+/* EVEN OR ODD */
+#even-odd-app {
+    background: goldenrod;
 }

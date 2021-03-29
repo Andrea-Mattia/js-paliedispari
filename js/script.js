@@ -5,18 +5,26 @@
  * Creare una funzione per capire se la parola inserita è palindroma
  */
 
+// References
 var palindrome = document.getElementById('palindrome');
+var word = document.getElementById('user-word');
+var pal = document.getElementById('pal');
 
 palindrome.addEventListener('click', function() {
     // References
-    var userWord = prompt('Inserisci una parola').toLowerCase().trim();
+    do {
+        var userWord = prompt('Inserisci una parola');
+    } while ( !isNaN(userWord) || userWord === null );
     var wordReverted = reverseWord(userWord);
+
+    // Stampo la parola inserita
+    word.innerHTML = userWord;
 
     // If statement per vedere se la parola è palindroma
     if (userWord === wordReverted) {
-        console.log('La tua parola "' + userWord + '" è palindroma!');
+        pal.innerHTML = 'La tua parola, "' + userWord + '", è palindroma!';
     } else {
-        console.log('La tua parola "' + userWord + '" non è palindroma :(');
+        pal.innerHTML = 'La tua parola, "' + userWord + '", non è palindroma :(';
     }
 
     /**
@@ -51,29 +59,42 @@ palindrome.addEventListener('click', function() {
  * Dichiariamo chi ha vinto.
  */
 
+// References
 var pariDispari = document.getElementById('even-odd');
+var choice = document.getElementById('choice');
+var usNum = document.getElementById('us-num');
+var pcNum = document.getElementById('pc-num');
+var sum = document.getElementById('sum');
+var result = document.getElementById('result');
 
 pariDispari.addEventListener ('click', function() {
     // References
-    var evenOddUser = prompt('Scegli pari o dispari').toLowerCase().trim();
-    var userNumber = parseInt( prompt('Scegli un numero da 1 a 5') );
+    do {
+        var evenOddUser = prompt('Scegli pari o dispari');
+    } while ( (evenOddUser != 'pari') && (evenOddUser != 'dispari') || evenOddUser === null);
+
+    
+    do {
+        var userNumber = parseInt( prompt('Scegli un numero da 1 a 5') );
+    } while ( isNaN(userNumber) || userNumber < 1 || userNumber > 5 || userNumber === null);
 
     // Settings
     var randNumb = pcRandomNumber(1, 5);
     var finalNum = userNumber + randNumb;
     var finalEvenOdd = evenOdd(finalNum);
 
-    // stampo i numeri
-    console.log('Numero scelto dall\' utente: ' + userNumber);
-    console.log('Numero generato per il PC: ' + randNumb);
-    console.log('La somma tra i due numeri è: ' + finalNum);
+    // stampo i vari dati
+    choice.innerHTML = evenOddUser;
+    usNum.innerHTML = userNumber;
+    pcNum.innerHTML = randNumb;
+    sum.innerHTML = finalNum;
 
 
     // stampo il risultato
     if (finalEvenOdd === evenOddUser) {
-        console.log('Complimenti, il risultato è ' + finalEvenOdd + '. HAI VINTO!!');
+        result.innerHTML ='Complimenti, il risultato è ' + finalEvenOdd + '. HAI VINTO!!';
     } else {
-        console.log('Mi dispiace, il risultato è ' + finalEvenOdd + '. Hai perso :(');
+        result.innerHTML ='Mi dispiace, il risultato è ' + finalEvenOdd + '. Hai perso :(';
     }
 
     // FUNZIONI
