@@ -12,10 +12,16 @@ var pal = document.getElementById('pal');
 
 palindrome.addEventListener('click', function() {
     // References
+    // Validazione dato inserito
     do {
         var userWord = prompt('Inserisci una parola');
     } while ( !isNaN(userWord) || userWord === null );
+
+    // 'Ribalto' la parola con la mia funzione
     var wordReverted = reverseWord(userWord);
+
+    // Pulisco eventuali spazi e porto tutto in caratteri minuscoli
+    userWord.toLowerCase().trim();
 
     // Stampo la parola inserita
     word.innerHTML = userWord;
@@ -69,6 +75,7 @@ var result = document.getElementById('result');
 
 pariDispari.addEventListener ('click', function() {
     // References
+    // Validazione dati inseriti
     do {
         var evenOddUser = prompt('Scegli pari o dispari');
     } while ( (evenOddUser != 'pari') && (evenOddUser != 'dispari') || evenOddUser === null);
@@ -83,7 +90,7 @@ pariDispari.addEventListener ('click', function() {
     var finalNum = userNumber + randNumb;
     var finalEvenOdd = evenOdd(finalNum);
 
-    // stampo i vari dati
+    // stampo i vari dati in HTML
     choice.innerHTML = evenOddUser;
     usNum.innerHTML = userNumber;
     pcNum.innerHTML = randNumb;
